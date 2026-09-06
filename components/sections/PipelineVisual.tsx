@@ -77,7 +77,7 @@ export function PipelineVisual() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-gray-400">8 open opportunities</span>
-              <span className="text-xs bg-green-50 text-green-600 border border-green-100 px-2 py-0.5 rounded font-medium">
+              <span className="text-xs text-green-600 font-medium">
                 $47,100 pipeline
               </span>
             </div>

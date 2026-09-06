@@ -37,7 +37,7 @@ function CrmDashboardVisual() {
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-100">
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold text-ink-900">Sales Pipeline</span>
-          <span className="text-xs bg-[#F8F8F6] text-[#6B7280] border border-gray-200 px-2 py-0.5 rounded font-medium">
+          <span className="text-xs text-[#6B7280] font-medium">
             Q3 Active
           </span>
         </div>

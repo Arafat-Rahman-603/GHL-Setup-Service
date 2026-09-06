@@ -59,11 +59,11 @@ const typeStyles: Record<string, string> = {
 };
 
 const labelColors: Record<string, string> = {
-  trigger: "text-blue-600 bg-blue-50 border-blue-100",
-  condition: "text-amber-600 bg-amber-50 border-amber-100",
-  action: "text-ink-900 bg-gray-100 border-gray-200",
-  wait: "text-gray-500 bg-gray-50 border-gray-200",
-  end: "text-green-600 bg-green-50 border-green-100",
+  trigger: "text-blue-600",
+  condition: "text-amber-600",
+  action: "text-ink-900",
+  wait: "text-gray-500",
+  end: "text-green-600",
 };
 
 export function WorkflowVisual() {
@@ -130,7 +130,7 @@ export function WorkflowVisual() {
                 <span className="text-xs font-semibold text-ink-900">
                   Lead Follow-up Workflow
                 </span>
-                <span className="ml-auto text-[10px] text-green-600 font-medium bg-green-50 border border-green-100 px-2 py-0.5 rounded">
+                <span className="ml-auto text-[10px] text-green-600 font-medium">
                   Active
                 </span>
               </div>
@@ -145,7 +145,7 @@ export function WorkflowVisual() {
                     >
                       {/* Label badge */}
                       <span
-                        className={`text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border shrink-0 ${labelColors[step.type]}`}
+                        className={`text-[9px] font-semibold uppercase tracking-wider shrink-0 ${labelColors[step.type]}`}
                       >
                         {step.label}
                       </span>
