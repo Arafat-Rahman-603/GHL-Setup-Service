@@ -5,6 +5,7 @@ import { services } from "@/lib/content/services";
 import { industries } from "@/lib/content/industries";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { Accordion } from "@/components/ui/Accordion";
 
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
@@ -238,6 +239,169 @@ function HomeIndustries() {
   );
 }
 
+function HomePricingSection() {
+  const packages = [
+    {
+      name: "Starter",
+      description: "For businesses that need the essential GoHighLevel setup.",
+      price: "$1,500",
+      features: [
+        "CRM & pipeline setup",
+        "Calendar & booking configuration",
+        "Basic email/SMS templates",
+        "Domain & email authentication",
+        "1-hour team onboarding",
+      ],
+      href: site.cta.bookCall,
+      highlighted: false,
+    },
+    {
+      name: "Growth",
+      description: "For businesses that need a complete CRM, automation, and funnel system.",
+      price: "$3,000",
+      features: [
+        "Everything in Starter",
+        "Automated lead follow-up sequences",
+        "Appointment reminder workflows",
+        "Custom landing page & funnel",
+        "Basic third-party integrations",
+        "30 days post-launch support",
+      ],
+      href: site.cta.bookCall,
+      highlighted: true,
+      badge: "Most Popular",
+    },
+    {
+      name: "Scale",
+      description: "For businesses that need advanced automation and a fully customized ecosystem.",
+      price: "$5,500+",
+      features: [
+        "Everything in Growth",
+        "Advanced multi-step automations",
+        "Custom webhook & API integrations",
+        "Complex data migration",
+        "Custom reporting dashboards",
+        "90 days dedicated support",
+      ],
+      href: site.cta.bookCall,
+      highlighted: false,
+    }
+  ];
+
+  return (
+    <section className="section-md bg-surface border-b border-gray-100" aria-labelledby="pricing-heading">
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="Pricing"
+          heading="Transparent pricing for professional implementation."
+          subheading="Choose the level of implementation that matches your business complexity. No hidden fees or ongoing retainers required."
+          align="center"
+          className="mb-10 lg:text-center"
+        />
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {packages.map((pkg) => (
+            <div
+              key={pkg.name}
+              className={`card card-padded flex flex-col gap-6 relative transition-all duration-200 ${
+                pkg.highlighted 
+                  ? "border-ink-900 ring-1 ring-ink-900 shadow-md md:-translate-y-2" 
+                  : "hover:border-gray-300"
+              }`}
+            >
+              {pkg.highlighted && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <span className="bg-ink-900 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
+                    {pkg.badge}
+                  </span>
+                </div>
+              )}
+              <div>
+                <h3 className="text-title mb-2">{pkg.name}</h3>
+                <p className="text-body text-gray-500 min-h-[3rem]">{pkg.description}</p>
+              </div>
+              <div className="text-display font-number">
+                {pkg.price}
+              </div>
+              <ul className="flex flex-col gap-3 flex-1">
+                {pkg.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-body text-gray-600">
+                    <svg viewBox="0 0 10 8" fill="none" className="w-3 h-3 text-accent shrink-0 mt-1.5" stroke="currentColor" strokeWidth="2">
+                      <path d="M1 4l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={pkg.href}
+                className={`btn w-full ${pkg.highlighted ? "btn-primary" : "btn-outline"}`}
+              >
+                Get Started
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeFaqSection() {
+  const faqs = [
+    {
+      question: "What is GoHighLevel and how can it help my business?",
+      answer: "GoHighLevel is a comprehensive all-in-one marketing and sales platform. It helps businesses consolidate their software stack by combining CRM, email marketing, SMS, calendar scheduling, funnels, and automation into a single system, streamlining operations and improving lead conversion."
+    },
+    {
+      question: "What does your GHL setup service include?",
+      answer: "Our service includes complete configuration of your GoHighLevel account. This covers CRM pipeline setup, domain and email authentication, calendar booking systems, core automation workflows, SMS/phone provisioning, and a structured handover so your team can use the system immediately."
+    },
+    {
+      question: "How long does a typical GHL setup take?",
+      answer: "A standard implementation typically takes 2 to 4 weeks depending on the complexity of your requirements. We start with a strategy call to map out your workflows, followed by the build phase, rigorous testing, and a final handover."
+    },
+    {
+      question: "Do you build funnels and websites inside GoHighLevel?",
+      answer: "Yes, depending on the package you choose, we can design and build custom landing pages, opt-in funnels, and full websites directly within GoHighLevel, fully integrated with your CRM and automated follow-up sequences."
+    },
+    {
+      question: "Can you create automated workflows and follow-up sequences?",
+      answer: "Absolutely. We specialize in building reliable automation workflows, including immediate lead follow-ups, appointment reminders, nurture sequences, and post-service review requests to ensure no opportunity falls through the cracks."
+    },
+    {
+      question: "Can you migrate my existing CRM or customer data?",
+      answer: "Yes, we can handle data migration from your existing CRM or spreadsheets. We ensure your contacts, tags, and basic histories are properly formatted and securely imported into your new GoHighLevel pipelines."
+    },
+    {
+      question: "Will you provide support after the setup is complete?",
+      answer: "Yes. Every setup includes a post-launch support period (ranging from 30 to 90 days depending on your package) to help answer questions, make minor adjustments, and ensure your team is confident using the platform."
+    },
+    {
+      question: "Can you customize the setup for my specific business?",
+      answer: "100%. We do not use generic, one-size-fits-all templates. Every pipeline, custom field, and automation is mapped and configured to match your actual business model and sales process."
+    }
+  ];
+
+  return (
+    <section className="section-md bg-white border-b border-gray-100" aria-labelledby="home-faq-heading">
+      <div className="container-page">
+        <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <span className="eyebrow mb-3 block w-fit">FAQ</span>
+            <h2 id="home-faq-heading" className="text-headline mb-4">
+              Common questions about our setup service.
+            </h2>
+            <p className="text-body text-gray-500">
+              If your question isn&apos;t covered here, book a strategy call and we&apos;ll be happy to answer it directly.
+            </p>
+          </div>
+          <Accordion items={faqs} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -250,6 +414,8 @@ export default function HomePage() {
       <GhlCapabilitySection />
       <HomeProcess />
       <HomeIndustries />
+      <HomePricingSection />
+      <HomeFaqSection />
       <CtaSection
         heading="Start with a strategy call."
         subheading="Tell us about your business and what you're trying to build. We'll outline a clear implementation plan."
