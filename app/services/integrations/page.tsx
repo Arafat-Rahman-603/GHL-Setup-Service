@@ -12,17 +12,17 @@ export const metadata: Metadata = {
 export default function IntegrationsPage() {
   return (
     <>
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
         <div className="container-page">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block w-fit">Integrations</span>
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            <span className="eyebrow mb-3 block w-fit">Integrations</span>
             <h1 className="text-display mb-5">Connect GoHighLevel with the rest of your stack.</h1>
-            <p className="text-body-lg text-gray-500 mb-8">
+            <p className="text-body-lg text-gray-500 max-w-2xl mb-8">
               Native integrations, Zapier and Make connections, API and webhook
               configurations — so GoHighLevel works as part of a connected system
               rather than an isolated tool.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link href={site.cta.bookCall} className="btn btn-primary btn-lg">Book a Strategy Call</Link>
               <Link href="/services" className="btn btn-outline btn-lg">All Services</Link>
             </div>

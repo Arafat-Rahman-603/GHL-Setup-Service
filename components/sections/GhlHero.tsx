@@ -121,7 +121,7 @@ export function GhlHero() {
 
   return (
     <section
-      className="section-lg bg-white border-b border-gray-100"
+      className="pt-12 pb-12 md:pt-16 md:pb-16 bg-white border-b border-gray-100"
       aria-labelledby="hero-heading"
     >
       <div className="container-page">

@@ -18,7 +18,7 @@ const whatToExpect = [
 
 export default function BookACallPage() {
   return (
-    <div className="section-lg bg-white">
+    <div className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white">
       <div className="container-page">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left */}

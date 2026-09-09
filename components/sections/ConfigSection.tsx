@@ -8,12 +8,12 @@ export function ConfigSection() {
       id="configuration"
     >
       <div className="container-page">
-        <div className="mb-10">
-          <span className="eyebrow mb-3 block w-fit">What Gets Built</span>
-          <h2 id="config-heading" className="text-headline max-w-xl">
+        <div className="mb-10 text-center max-w-2xl mx-auto">
+          <span className="eyebrow mb-3 block w-fit mx-auto">What Gets Built</span>
+          <h2 id="config-heading" className="text-headline">
             Every system configured, tested, and documented.
           </h2>
-          <p className="text-body text-gray-500 mt-3 max-w-xl">
+          <p className="text-body text-gray-500 mt-3 mx-auto">
             The implementation covers all core GoHighLevel systems — not
             surface-level settings, but the full technical and operational
             configuration your business needs to run.

@@ -38,15 +38,15 @@ export default async function IndustryDetailPage({ params }: Props) {
         ]} />
       </div>
 
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
         <div className="container-page">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block w-fit">{industry.name}</span>
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            <span className="eyebrow mb-3 block w-fit">{industry.name}</span>
             <h1 className="text-display mb-4">
               GoHighLevel implementation for {industry.name}.
             </h1>
-            <p className="text-body-lg text-gray-500 mb-8">{industry.description}</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-body-lg text-gray-500 max-w-2xl mb-8">{industry.description}</p>
+            <div className="flex flex-wrap justify-center gap-3">
               <Link href={site.cta.bookCall} className="btn btn-primary btn-lg">Book a Strategy Call</Link>
               <Link href="/services/gohighlevel-setup" className="btn btn-outline btn-lg">GHL Setup Service</Link>
             </div>

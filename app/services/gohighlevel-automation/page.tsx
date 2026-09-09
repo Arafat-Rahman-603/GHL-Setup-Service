@@ -44,23 +44,24 @@ export default function GhlAutomationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-surface to-white -z-10" />
         <div className="container-page">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <span className="eyebrow mb-4 block w-fit">GoHighLevel Automation</span>
             <h1 className="text-display mb-5">
               Workflow automation that runs your business processes reliably.
             </h1>
-            <p className="text-body-lg text-gray-500 mb-8">
+            <p className="text-body-lg text-gray-500 mb-8 max-w-2xl text-center">
               Lead follow-up, appointment confirmation, nurture sequences, and
               review requests — built, tested, and configured for your specific
               pipeline and workflow logic.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href={site.cta.bookCall} className="btn btn-primary btn-lg">
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link href={site.cta.bookCall} className="btn btn-primary">
                 Book a Strategy Call
               </Link>
-              <Link href="/services/gohighlevel-setup" className="btn btn-outline btn-lg">
+              <Link href="/services/gohighlevel-setup" className="btn btn-outline">
                 Full GHL Setup
               </Link>
             </div>
@@ -112,8 +113,8 @@ export default function GhlAutomationPage() {
       {/* Capabilities */}
       <section className="section-md bg-white border-b border-gray-100">
         <div className="container-page">
-          <div className="mb-8">
-            <h2 className="text-headline max-w-xl">Automation workflows we build.</h2>
+          <div className="mb-10 text-center">
+            <h2 className="text-headline mx-auto">Automation workflows we build.</h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden">
             {automationCapabilities.map((cap) => (

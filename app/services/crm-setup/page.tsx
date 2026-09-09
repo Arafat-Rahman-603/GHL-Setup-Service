@@ -12,22 +12,19 @@ export const metadata: Metadata = {
 export default function CrmSetupPage() {
   return (
     <>
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
         <div className="container-page">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block w-fit">CRM Setup</span>
-            <h1 className="text-display mb-5">
-              A CRM that reflects how your business actually works.
-            </h1>
-            <p className="text-body-lg text-gray-500 mb-8">
-              Default CRM stages don&apos;t match most businesses&apos; actual sales
-              processes. We configure your CRM with custom pipelines, contact
-              fields, and lead tracking built around your specific workflow —
-              not a generic template.
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            <span className="eyebrow mb-3 block w-fit">CRM Setup</span>
+            <h1 className="text-display mb-5">Configuration matched to your exact sales process.</h1>
+            <p className="text-body-lg text-gray-500 max-w-2xl mb-8">
+              Pipeline stages, custom fields, smart lists, and opportunity routing
+              built to reflect how your team actually works, rather than forcing
+              your team into a generic template.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link href={site.cta.bookCall} className="btn btn-primary btn-lg">Book a Strategy Call</Link>
-              <Link href="/services/gohighlevel-setup" className="btn btn-outline btn-lg">Full GHL Setup</Link>
+              <Link href="/services" className="btn btn-outline btn-lg">All Services</Link>
             </div>
           </div>
         </div>

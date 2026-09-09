@@ -33,12 +33,12 @@ export function ComparisonSection() {
       aria-labelledby="comparison-heading"
     >
       <div className="container-page">
-        <div className="mb-10">
-          <span className="eyebrow mb-3 block w-fit">Comparison</span>
-          <h2 id="comparison-heading" className="text-headline max-w-xl">
+        <div className="mb-10 text-center max-w-2xl mx-auto">
+          <span className="eyebrow mb-3 block w-fit mx-auto">Comparison</span>
+          <h2 id="comparison-heading" className="text-headline">
             DIY vs. generic setup vs. professional implementation.
           </h2>
-          <p className="text-body text-gray-500 mt-3 max-w-xl">
+          <p className="text-body text-gray-500 mt-3 mx-auto">
             Every setup approach produces a different outcome. Here&apos;s how they
             compare across the dimensions that matter for business operations.
           </p>

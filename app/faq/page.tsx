@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <>
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
         <div className="container-page">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block w-fit">FAQ</span>
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            <span className="eyebrow mb-3 block w-fit">FAQ</span>
             <h1 className="text-display mb-4">Frequently asked questions.</h1>
-            <p className="text-body-lg text-gray-500">
+            <p className="text-body-lg text-gray-500 max-w-2xl">
               Common questions about our services, process, and how GoHighLevel
               implementation works. If your question isn&apos;t here,{" "}
               <Link href="/contact" className="text-accent underline underline-offset-2">

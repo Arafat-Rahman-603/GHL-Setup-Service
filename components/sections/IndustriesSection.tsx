@@ -1,67 +1,36 @@
-import Link from "next/link";
+"use client";
+
 import { ghlIndustries } from "@/lib/content/ghl-setup";
+import { IndustryCarousel } from "@/components/ui/IndustryCarousel";
+import { motion } from "framer-motion";
 
 export function IndustriesSection() {
   return (
     <section
-      className="section-md bg-surface border-b border-gray-100"
+      className="section-md bg-surface border-b border-gray-100 overflow-hidden"
       aria-labelledby="industries-heading"
     >
       <div className="container-page">
-        <div className="mb-10">
-          <span className="eyebrow mb-3 block w-fit">Industries</span>
-          <h2 id="industries-heading" className="text-headline max-w-xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center max-w-2xl mx-auto"
+        >
+          <span className="eyebrow mb-3 block w-fit mx-auto">Industries</span>
+          <h2 id="industries-heading" className="text-headline">
             Configuration changes based on how your industry works.
           </h2>
-          <p className="text-body text-gray-500 mt-3 max-w-xl">
+          <p className="text-body text-gray-500 mt-3 mx-auto">
             GoHighLevel implementation for a real estate team looks different
             from an HVAC company or a coaching business. We configure the
             system around your specific workflows.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {ghlIndustries.map((industry) => (
-            <article
-              key={industry.slug}
-              className="card card-padded flex flex-col gap-4"
-              aria-labelledby={`industry-${industry.slug}`}
-            >
-              <h3
-                id={`industry-${industry.slug}`}
-                className="text-sm font-bold text-ink-900"
-              >
-                {industry.name}
-              </h3>
-              <p className="text-body text-gray-500 flex-1">{industry.description}</p>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
-                  Common workflows
-                </p>
-                <ul className="flex flex-col gap-1">
-                  {industry.workflows.map((wf) => (
-                    <li
-                      key={wf}
-                      className="flex items-center gap-2 text-xs text-gray-500"
-                    >
-                      <span
-                        className="w-1 h-1 rounded-full bg-gray-400 shrink-0"
-                        aria-hidden="true"
-                      />
-                      {wf}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link
-                href={`/industries/${industry.slug}`}
-                className="text-sm font-semibold text-ink-900 hover:text-accent transition-colors"
-                aria-label={`Learn about GoHighLevel implementation for ${industry.name}`}
-              >
-                Learn more →
-              </Link>
-            </article>
-          ))}
+        <div className="mx-auto max-w-[100vw] sm:max-w-none -mx-4 sm:mx-0 px-4 sm:px-0">
+          <IndustryCarousel industries={ghlIndustries} basePath="/industries" />
         </div>
       </div>
     </section>

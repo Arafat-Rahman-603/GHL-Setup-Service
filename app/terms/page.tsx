@@ -14,9 +14,9 @@ export default function TermsOfServicePage() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="section-md bg-surface border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-surface border-b border-gray-100 text-center">
         <div className="container-narrow">
-          <span className="eyebrow mb-4 block w-fit">Legal</span>
+          <span className="eyebrow mb-3 block w-fit mx-auto">Legal</span>
           <h1 className="text-display mb-3">Terms of Service</h1>
           <p className="text-body text-gray-500">
             Last updated: {lastUpdated}

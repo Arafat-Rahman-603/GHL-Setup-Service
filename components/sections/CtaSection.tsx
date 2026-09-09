@@ -22,7 +22,7 @@ export function CtaSection({
 
   return (
     <section
-      className="section-lg bg-ink-900 border-t border-gray-800"
+      className="section-md bg-ink-900 border-t border-gray-800"
       aria-labelledby="cta-heading"
     >
       <div className="container-narrow text-center">

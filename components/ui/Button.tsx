@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import { motion } from "framer-motion";
 
 type ButtonVariant = "primary" | "accent" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
@@ -28,6 +29,8 @@ function classNames(variant: ButtonVariant, size: ButtonSize, extra?: string) {
   return [base, v, s, extra].filter(Boolean).join(" ");
 }
 
+const MotionLink = motion.create(Link);
+
 export function Button({
   variant = "primary",
   size = "md",
@@ -41,17 +44,32 @@ export function Button({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { as: _as, ...rest } = props as ButtonAsLink;
     return (
-      <Link href={rest.href} className={cls} {...(rest as Record<string, unknown>)}>
+      <MotionLink 
+        href={rest.href} 
+        className={cls} 
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        {...(rest as any)}
+      >
         {children}
-      </Link>
+      </MotionLink>
     );
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { as: _as, ...rest } = props as ButtonAsButton;
   return (
-    <button className={cls} {...rest}>
+    <motion.button 
+      className={cls} 
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      {...(rest as any)}
+    >
       {children}
-    </button>
+    </motion.button>
   );
 }

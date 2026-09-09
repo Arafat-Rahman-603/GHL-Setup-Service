@@ -21,12 +21,12 @@ const processSteps = [
 export default function ProcessPage() {
   return (
     <>
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
         <div className="container-page">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block w-fit">Our Process</span>
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            <span className="eyebrow mb-3 block w-fit">Our Process</span>
             <h1 className="text-display mb-4">A structured implementation methodology.</h1>
-            <p className="text-body-lg text-gray-500">
+            <p className="text-body-lg text-gray-500 max-w-2xl">
               Every engagement follows the same disciplined process — adapted
               to your business specifics, but executed with consistent
               structure to ensure nothing is missed.

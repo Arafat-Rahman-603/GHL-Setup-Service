@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <>
-      <section className="section-lg bg-white border-b border-gray-100">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-surface border-b border-gray-100 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-white to-surface -z-10" />
         <div className="container-page">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <span className="eyebrow mb-4 block w-fit">Solutions</span>
             <h1 className="text-display mb-4">Business outcomes, not just technical features.</h1>
-            <p className="text-body-lg text-gray-500">
+            <p className="text-body-lg text-gray-500 max-w-2xl text-center">
               Each solution addresses a specific operational challenge — lead
               management, sales automation, appointment booking, or client
               retention — using GoHighLevel as the implementation platform.

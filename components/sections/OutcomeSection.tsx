@@ -9,9 +9,9 @@ export function OutcomeSection() {
       aria-labelledby="outcome-heading"
     >
       <div className="container-page">
-        <div className="mb-10">
-          <span className="eyebrow mb-3 block w-fit">The Transformation</span>
-          <h2 id="outcome-heading" className="text-headline max-w-xl">
+        <div className="mb-10 text-center">
+          <span className="eyebrow mb-3 block w-fit mx-auto">The Transformation</span>
+          <h2 id="outcome-heading" className="text-headline max-w-xl mx-auto">
             {heading}
           </h2>
         </div>
