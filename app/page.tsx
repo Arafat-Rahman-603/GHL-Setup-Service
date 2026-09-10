@@ -400,6 +400,8 @@ function HomeTestimonials() {
   );
 }
 
+import { ClientLogos } from "@/components/sections/ClientLogos";
+
 export default function HomePage() {
   return (
     <>
@@ -408,6 +410,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <HomeHero />
+      <ClientLogos />
       <ServicesOverview />
       <GhlCapabilitySection />
       <HomeProcess />

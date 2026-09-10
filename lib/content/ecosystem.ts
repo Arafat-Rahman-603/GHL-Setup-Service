@@ -1,0 +1,20 @@
+export const ecosystems = [
+  { name: "GoHighLevel", description: "Core CRM & Automation Ecosystem", icon: "Boxes" },
+  { name: "Stripe", description: "Payments & Billing", icon: "CreditCard" },
+  { name: "Zapier", description: "App Automation", icon: "Zap" },
+  { name: "Make", description: "Advanced Workflows", icon: "GitMerge" },
+  { name: "Google", description: "Workspace Integration", icon: "Search" },
+  { name: "Google Calendar", description: "Scheduling & Calendar Sync", icon: "Calendar" },
+  { name: "Meta", description: "Lead & Marketing Integrations", icon: "Share2" },
+  { name: "Facebook", description: "Lead Forms & Messenger", icon: "MessageCircle" },
+  { name: "Instagram", description: "DM Automation", icon: "Camera" },
+  { name: "Twilio", description: "SMS & Communication", icon: "MessageSquare" },
+  { name: "Mailgun", description: "Reliable Email Delivery", icon: "Mail" },
+  { name: "SendGrid", description: "Transactional Email", icon: "Send" },
+  { name: "Slack", description: "Team Notifications", icon: "Hash" },
+  { name: "Calendly", description: "External Scheduling", icon: "Clock" },
+  { name: "WordPress", description: "Website & Forms", icon: "LayoutTemplate" },
+  { name: "Shopify", description: "E-Commerce Sync", icon: "ShoppingCart" },
+  { name: "Webhooks", description: "Custom Data Connections", icon: "Webhook" },
+  { name: "REST API", description: "Custom Integrations", icon: "Code" }
+];

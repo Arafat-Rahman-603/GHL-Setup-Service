@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { site } from "@/lib/content/site";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { AnimatedStagger, AnimatedItem } from "@/components/ui/AnimatedStagger";
-import { CheckCircle2, Target, Lightbulb, Shield } from "lucide-react";
+import { CheckCircle2, Target, Lightbulb, Shield, Boxes, CreditCard, Zap, GitMerge, Search, Calendar, Share2, MessageCircle, Camera, MessageSquare, Mail, Send, Hash, Clock, LayoutTemplate, ShoppingCart, Webhook, Code } from "lucide-react";
+import { ourStoryContent } from "@/lib/content/about";
+import { ecosystems } from "@/lib/content/ecosystem";
+
+const iconMap: Record<string, React.ElementType> = {
+  Boxes, CreditCard, Zap, GitMerge, Search, Calendar, Share2, MessageCircle, Camera, MessageSquare, Mail, Send, Hash, Clock, LayoutTemplate, ShoppingCart, Webhook, Code
+};
 
 export const metadata: Metadata = {
   title: "About",
@@ -65,29 +71,34 @@ function OurStory() {
   return (
     <section className="section-md bg-white border-b border-gray-100">
       <div className="container-page">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <AnimatedStagger>
             <AnimatedItem>
-              <h2 className="text-headline mb-5">Software is only as good as its implementation.</h2>
+              <span className="eyebrow mb-4 block w-fit">{ourStoryContent.eyebrow}</span>
+              <h2 className="text-headline mb-6">{ourStoryContent.heading}</h2>
             </AnimatedItem>
             <AnimatedItem>
-              <div className="prose prose-gray max-w-none text-body text-gray-600 space-y-4">
-                <p>
-                  Most businesses don&apos;t fail at GoHighLevel because the software lacks features. They fail because the system was never configured to match how their business actually operates in the real world.
-                </p>
-                <p>
-                  We started {site.name} after watching countless companies purchase premium software, only to abandon it months later because the setup was too complex, the workflows were generic templates, and their team fundamentally refused to adopt it.
-                </p>
-                <p>
-                  Our approach evolved to be completely different. We realized that companies didn&apos;t need another SaaS subscription—they needed an implementation partner. Someone to map the actual sales process, design the logic, build the pipelines, write the automations, and rigorously test everything end-to-end before a final, documented handover.
-                </p>
+              <div className="prose prose-gray max-w-none text-body text-gray-600 space-y-5">
+                {ourStoryContent.paragraphs.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
               </div>
             </AnimatedItem>
           </AnimatedStagger>
-          <AnimatedStagger className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-gray-200 bg-gray-100">
-             <div className="absolute inset-0 flex items-center justify-center">
-               <span className="text-gray-400 font-medium tracking-wide text-xs uppercase">Story Visual Placeholder</span>
-             </div>
+          
+          <AnimatedStagger className="grid grid-cols-2 gap-4 lg:gap-6">
+            {ourStoryContent.statistics.map((stat, idx) => (
+              <AnimatedItem key={idx}>
+                <div className="bg-surface border border-gray-100 rounded-xl p-6 h-full flex flex-col justify-center text-center transition-colors hover:border-gray-200">
+                  <div className="text-3xl md:text-4xl font-number font-bold text-ink-900 mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                </div>
+              </AnimatedItem>
+            ))}
           </AnimatedStagger>
         </div>
       </div>
@@ -261,22 +272,58 @@ function HowWeWork() {
 // 10. TECHNOLOGY / ECOSYSTEM
 function Technology() {
   return (
-    <section className="section-md bg-white border-b border-gray-100 text-center">
-      <div className="container-page">
+    <section className="py-12 md:py-16 bg-white border-b border-gray-100 overflow-hidden text-center" aria-labelledby="technology-heading">
+      <div className="container-page mb-8 md:mb-10">
         <AnimatedStagger>
           <AnimatedItem>
-            <h2 className="text-title mb-8">Integrated Ecosystems</h2>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-50 grayscale">
-              {/* Placeholders for partner/tech logos */}
-              <div className="h-8 w-32 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-24 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-40 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-28 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-36 bg-gray-200 rounded animate-pulse" />
-            </div>
+            <span className="eyebrow mx-auto mb-4">Integrated Ecosystems</span>
+            <h2 id="technology-heading" className="text-headline mb-4">The platforms we build on.</h2>
+            <p className="text-body text-gray-500 max-w-2xl mx-auto">
+              We connect GoHighLevel with the tools your business already uses, creating a unified operational ecosystem.
+            </p>
           </AnimatedItem>
         </AnimatedStagger>
       </div>
+
+      <div className="relative w-full max-w-[1400px] mx-auto overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {[...ecosystems, ...ecosystems, ...ecosystems].map((eco, idx) => {
+            const IconComponent = iconMap[eco.icon] || Boxes;
+            return (
+              <div 
+                key={`${eco.name}-${idx}`} 
+                className="flex items-center gap-3 px-6 md:px-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default"
+              >
+                <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-ink-900" strokeWidth={1.5} />
+                <span className="text-sm md:text-base font-bold text-ink-900 whitespace-nowrap">
+                  {eco.name}
+                </span>
+                {/* Dot separator */}
+                <div className="w-1 h-1 rounded-full bg-gray-300 ml-6 md:ml-10" />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+      {/* 
+        Inline styles for marquee animation 
+        (Uses the same reliable technique as the client logos marquee)
+      */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-33.333333%); }
+        }
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+        @media (max-width: 768px) {
+          .animate-marquee {
+            animation-duration: 25s;
+          }
+        }
+      `}} />
     </section>
   );
 }
